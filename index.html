@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMC y salud</title>
+</head>
+<body>
+    <h1>Cálculo de IMC  para adultos</h1>
+
+    <h2>Mantener un peso dentro del rango saludable de IMC es importante para la salud general. 💪</h2>
+    <h3>Hable sobre su resultado de IMC con su proveedor de atención médica, ya que puede estar relacionado con su salud y bienestar general.</h3>
+    
+    <h4>El índice de masa corporal (IMC) es el peso de una persona en kilogramos dividido por el cuadrado de la estatura en metros. 
+
+        El IMC no mide la grasa corporal directamente, pero se relaciona moderadamente con medidas más directas de la grasa corporal. 
+        Además, el IMC parece estar fuertemente correlacionado con diversos resultados metabólicos y de enfermedades como lo están estas medidas más directas de la grasa corporal.
+        El IMC se usa como una herramienta de detección, pero no diagnostica la grasa corporal ni la salud de un individuo
+    </h4>
+
+    IMC
+Nivel de peso
+Por debajo de 18.5	Bajo peso
+18.5 – 24.9	Normal
+25.0 – 29.9	Sobrepeso
+30.0 o más	Obesidad
+
+El IMC se interpreta de manera diferente para niños y adolescentes, aunque se calcula utilizando la misma fórmula que el IMC para adultos. El IMC de niños y adolescentes debe ser específico para la edad y el sexo porque la cantidad de grasa corporal cambia con la edad y la cantidad de grasa corporal difiere entre niñas y niños. 
+
+
+    <script>
+
+        function saltarLinea() {
+            document.write("<br>");
+            document.write("<br>");
+        }
+    
+        function imprimir(mensaje){
+            document.write(mensaje);
+            saltarLinea();
+            
+        }
+    
+    
+        function calcularIMC(peso , altura){
+            
+         return(peso / (altura * altura));
+            
+        }
+
+       
+    
+        const nombre = prompt("Informe su nombre: ")
+        const pesoInf = prompt(nombre + ", informe su peso: ")
+        const alturaInf = prompt(nombre + ", informe su altura: ")
+    
+        let imcCalculado = calcularIMC(pesoInf, alturaInf);
+    
+        imprimir("<h2>" + nombre + ", su IMC calculado es: " + imcCalculado + "</h2>");
+
+        imprimir ("Peso: " + pesoInf );
+        
+        imprimir ("Altura: " + alturaInf );
+
+        if(imcCalculado < 18.5){
+            imprimir ("IMC menor a lo recomendado - Por debajo de 18.5")
+        } else if(imcCalculado >= 30){
+            imprimir ("IMC considerado como obesidad - 30.0 o más")
+        }else if(imcCalculado >= 25 && imcCalculado <= 29.9){
+            imprimir ("IMC considerado como sobrepeso (pre-obesidad) - 25.0—29.9")
+        }else if(imcCalculado >= 18.5 && imcCalculado <= 24.9){
+            imprimir ("IMC considerado como normal - 18.5—24.9")
+        }
+        
+    
+        
+    
+    </script>
+    
+</body>
+</html>
